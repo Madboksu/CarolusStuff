@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --font-rodin: var(--font-rodin);
+  --color-ink: #1a1a1a;
+  --color-electric: #0066ff;
+  --color-paper: #f2f2f2;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== Hero: animasi saat halaman load ===== */
+@keyframes hero-in-left {
+  from { opacity: 0; translate: -4vw 0; }
+  to   { opacity: 1; translate: 0 0; }
+}
+@keyframes hero-in-right {
+  from { opacity: 0; translate: 4vw 0; }
+  to   { opacity: 1; translate: 0 0; }
+}
+@keyframes hero-in-up {
+  from { opacity: 0; translate: 0 2vw; }
+  to   { opacity: 1; translate: 0 0; }
+}
+
+.hero-left  { animation: hero-in-left 0.8s ease-out both; }
+.hero-right { animation: hero-in-right 0.8s ease-out 0.2s both; }
+.hero-up    { animation: hero-in-up 0.6s ease-out 0.5s both; }
+
+/* ===== Reveal: muncul saat section di-scroll ===== */
+.reveal-item {
+  opacity: 0;
+  transition:
+    opacity 0.8s ease-out var(--reveal-delay, 0s),
+    translate 0.8s ease-out var(--reveal-delay, 0s);
+}
+.reveal-up    { translate: 0 4vw; }
+.reveal-left  { translate: -4vw 0; }
+.reveal-right { translate: 4vw 0; }
+
+.reveal-item.is-visible {
+  opacity: 1;
+  translate: 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-item {
+    opacity: 1;
+    translate: 0 0;
+    transition: none;
+  }
+}
