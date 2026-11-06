@@ -2,9 +2,9 @@ import ProjectCard from "@/components/ui/ProjectCard";
 import Reveal from "@/components/ui/Reveal";
 
 const projects = [
-  { name: "Geni", image: "/geni.png", href: "#" },
-  { name: "CodeBeater", image: "/codebeater.png", href: "#" },
-  { name: "Web E-ecomerce", image: "/ecommerce.png", href: "#" },
+  { name: "Geni", image: "/geni.jpeg", href: "#" },
+  { name: "CodeBeater", image: "/codebeater.jpeg", href: "#" },
+  { name: "Web E-ecomerce", image: "/ecommerce.jpeg", href: "#" },
 ];
 
 function Projects() {
